@@ -15,7 +15,7 @@
 get_query <- function(query, type = "apa")
 {
   ## The raw query
-  raw_query <- xml2::read_html(query)
+  raw_query <- xml2::read_html(GET(query,use_proxy(proxy,port)))
 
   ## Select out the listing ads
   raw_ads <- rvest::html_nodes(raw_query, "p.result-info")
