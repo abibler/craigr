@@ -61,7 +61,7 @@ rentals <- function(location = "seattle", area = "all", base_url = NULL,
     base_url <- get_base_url(location, area)
   }
 
-  if(!RCurl::url.exists(base_url)){
+  if(!RCurl::url.exists(base_url,.opts=opts)){
     stop("URL not found.  Please check your input and try again.")
   }
 
